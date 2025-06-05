@@ -1343,13 +1343,13 @@ const ApplicantDetails = () => {
                   }
                 />
                 <DocumentCard
-                  title="Resume/CV"
-                  fileName={applicant.documents?.resume}
-                  available={!!applicant.documents?.resume}
+                  title="Proof of Bank Account"
+                  fileName={applicant.documents?.proofOfBankAccount}
+                  available={!!applicant.documents?.proofOfBankAccount}
                   onDownload={() =>
                     handleDocumentDownload(
-                      applicant.documents?.resume,
-                      "resume.pdf"
+                      applicant.documents?.proofOfBankAccount,
+                      "proofOfBankAccount.pdf"
                     )
                   }
                 />
