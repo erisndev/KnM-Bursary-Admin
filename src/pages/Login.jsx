@@ -13,7 +13,7 @@ const Admin = () => {
       const res = await axios.post(
         `${baseAPI}/admin/login`,
         { email, password },
-        { withCredentials: true } // <-- important for cookies/credentials
+        { withCredentials: true }
       );
       localStorage.setItem("adminToken", res.data.token);
       window.location.href = "/admin";
