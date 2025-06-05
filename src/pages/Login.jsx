@@ -10,12 +10,12 @@ const Admin = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`${baseAPI}/admin/login`, {
-        email,
-        password,
-      });
+      const res = await axios.post(
+        `${baseAPI}/admin/login`,
+        { email, password },
+        { withCredentials: true } // <-- important for cookies/credentials
+      );
       localStorage.setItem("adminToken", res.data.token);
-      // redirect to dashboard
       window.location.href = "/admin";
     } catch (err) {
       setError(err.response?.data?.message || "Login failed");
