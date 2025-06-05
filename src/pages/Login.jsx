@@ -3,8 +3,8 @@ import axios from "axios";
 import baseAPI from "../../env";
 
 const Admin = () => {
-  const [email, setEmail] = useState("admin@knm.com");
-  const [password, setPassword] = useState("admin123");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
   const handleLogin = async (e) => {
