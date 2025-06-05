@@ -6,9 +6,12 @@ const Admin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setError("");
     try {
       const res = await axios.post(
         `${baseAPI}/admin/login`,
@@ -19,6 +22,8 @@ const Admin = () => {
       window.location.href = "/admin";
     } catch (err) {
       setError(err.response?.data?.message || "Login failed");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -42,6 +47,7 @@ const Admin = () => {
             onChange={(e) => setEmail(e.target.value)}
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight"
             required
+            disabled={loading}
           />
         </div>
         <div className="mb-6">
@@ -54,13 +60,15 @@ const Admin = () => {
             onChange={(e) => setPassword(e.target.value)}
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight"
             required
+            disabled={loading}
           />
         </div>
         <button
           type="submit"
-          className="w-full bg-cyan-800 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded"
+          className="w-full bg-cyan-800 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded cursor-pointer"
+          disabled={loading}
         >
-          Login
+          {loading ? "Logging in..." : "Login"}
         </button>
       </form>
     </div>

@@ -12,6 +12,7 @@ const Admin = () => {
   return (
     <div>
       <nav className="flex justify-between items-center p-4 bg-gray-100">
+        <img src=".\Logo.png" alt="Logo" className="w-32" />
         <h2 className="text-3xl font-bold text-cyan-900 mb-2">
           Admin Dashboard
         </h2>
