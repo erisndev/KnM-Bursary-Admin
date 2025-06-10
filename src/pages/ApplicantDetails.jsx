@@ -29,7 +29,7 @@ import {
   Trash2,
   Edit2,
 } from "lucide-react";
-import baseAPI, { baseURL } from "../../env";
+import baseAPI from "../../env";
 import toast from "react-hot-toast";
 
 const applicationSteps = [
@@ -742,7 +742,7 @@ const ApplicantDetails = () => {
 
   const handleDocumentDownload = (documentPath, fileName) => {
     if (!documentPath) return;
-    const downloadUrl = `${baseURL}/uploads/${documentPath}`;
+    const downloadUrl = `${documentPath}`;
     const link = document.createElement("a");
     link.href = downloadUrl;
     link.download = fileName;
