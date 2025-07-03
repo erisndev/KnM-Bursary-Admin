@@ -963,7 +963,7 @@ const ApplicantDetails = () => {
                 <InfoRow label="Full Name" value={applicant.fullName} />
                 <InfoRow label="Email Address" value={applicant.email} />
                 <InfoRow label="Phone Number" value={applicant.phone} />
-                <InfoRow label="ID Number" value={applicant.idNumber} />
+                <InfoRow label="ID Number" value={applicant.idnumber} />
                 <InfoRow
                   label="Date of Birth"
                   value={new Date(applicant.dob).toLocaleDateString()}
