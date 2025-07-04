@@ -1078,43 +1078,6 @@ const ApplicantDetails = () => {
                     </dl>
                   </div>
                 )}
-
-                {/* Previous Education */}
-                {applicant.previousEducations &&
-                  applicant.previousEducations.length > 0 && (
-                    <div>
-                      <h3 className="font-semibold text-gray-800 mb-3 pb-2 border-b border-gray-200">
-                        Previous Education
-                      </h3>
-                      <div className="space-y-4">
-                        {applicant.previousEducations.map((edu, index) => (
-                          <div
-                            key={index}
-                            className="bg-gray-50 rounded-lg p-4"
-                          >
-                            <h4 className="font-medium text-gray-900 mb-2">
-                              {edu.institutionName}
-                            </h4>
-                            <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2">
-                              <InfoRow
-                                label="Degree Type"
-                                value={edu.institutionDegreeType}
-                              />
-                              <InfoRow
-                                label="Degree Name"
-                                value={edu.institutionDegreeName}
-                              />
-                              <InfoRow
-                                label="Major"
-                                value={edu.institutionMajor}
-                              />
-                              <InfoRow label="GPA" value={edu.institutionGPA} />
-                            </dl>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
               </div>
             </InfoCard>
 
